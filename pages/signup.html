@@ -5,35 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="img/mic.png">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="../css/styles.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Login Page</title>
+    <title>Sign up Page</title>
 </head>
 <body>
     <div class="container">
         <div class="log-container">
-            <h2 id="title">Login</h2>
+            <h2 id="title">Sign Up</h2>
             <form action="" method="post">
                 <div class="input-group">
+                    <div class="input-field" id="namefield">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="Enter Name">
+                        <span id="nameerror"></span>
+                    </div>
                     <div class="input-field">
                         <i class="fa fa-envelope"></i>
-                        <input type="email" placeholder="Enter email" onkeyup="emailvalid()">
+                        <input type="email" placeholder="Enter email">
                         <span id="emailerror"></span>
                     </div>
                     <div class="input-field">
                         <i class="fa fa-unlock"></i>
-                        <input type="password" id="pass" placeholder="Enter password" onkeyup="passvalid()">
+                        <input type="password" id="pass" placeholder="Enter password">
                         <span id="passerror"></span>
                     </div>
                     <div class="check">
                         <input type="checkbox"> <label for="">Remember me</label>
                     </div>
-                    <div class="signline">
-                        <p>Don't have an Account ?<br><a href="pages/signup.html">Sign Up</a></p>
-                    </div>
                 </div>
                 <div class="btn-field">
-                    <button type="button" id="loginbtn" class="" onclick="login()">Login</button>
+                    <button type="button" id="loginbtn" class="">Sign Up</button>
                 </div>
             </form>
         </div>

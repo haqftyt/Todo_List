@@ -93,8 +93,12 @@ input{
     outline:none;
     transition: background-color 0.5s;
 }
-.btn-field button.disable{
-    background-color:#eaeaea;
-    color:grey;
+.input-field span{
+    padding:0 10px;
+    color:green;
 }
-
+.signline{
+    width:220px;
+    height:5px;
+    margin:20px 0;
+}
