@@ -13,16 +13,16 @@
     <div class="container">
         <div class="log-container">
             <h2 id="title">Login</h2>
-            <form action="" method="post">
+            <form action="">
                 <div class="input-group">
                     <div class="input-field">
                         <i class="fa fa-envelope"></i>
-                        <input type="email" placeholder="Enter email" onkeyup="emailvalid()">
+                        <input type="email" id="mail" placeholder="Enter email"value="" autocomplete="off">
                         <span id="emailerror"></span>
                     </div>
                     <div class="input-field">
                         <i class="fa fa-unlock"></i>
-                        <input type="password" id="pass" placeholder="Enter password" onkeyup="passvalid()">
+                        <input type="password" id="pass" placeholder="Enter password" value="">
                         <span id="passerror"></span>
                     </div>
                     <div class="check">
@@ -33,10 +33,28 @@
                     </div>
                 </div>
                 <div class="btn-field">
-                    <button type="button" id="loginbtn" class="" onclick="login()">Login</button>
+                    <button type="button" id="loginbtn"  onclick="login()">Login</button>
                 </div>
             </form>
         </div>
     </div>
+    <script>
+         function login(){
+            var form=document.querySelector('form');
+           var email= form.querySelector("#mail").value;
+           var password=form.querySelector('#pass').value;
+        //    console.log(email);
+        //    console.log(password);
+        if(email=="admin@gmail.com" && password=="admin123"){
+            
+            window.location.href = 'todo.html';
+            email.value='';
+            password.value='';
+        }
+        else{
+            alert("invalid username and password");
+        }
+         }
+    </script>
 </body>
 </html>
