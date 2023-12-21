@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/styles1.css" type="text/css">
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="container">
+        <div class="log-container">
+            <h2>To-do List</h2>
+            <div class="input-group">
+                <div class="input-field">
+                    <input type="text" placeholder="enter your task" id="input">
+                    <button id="button">Add</button>
+                </div>
+                <div class="list-field" id="todoList">
+                   
+                </div>
+            </div>    
+        </div>
+    </div>
+   <script>
+    let button=document.querySelector('#button');
+    let todoList=document.querySelector('#todoList');
+    let input=document.querySelector('#input');
+//Local Storage
+let task=[];
+window.onload=()=>{
+   task= JSON.parse(localStorage.getItem('task'))||[]//converts json to array
+   task.forEach(val => savetodo(val));
+}
+
+ button.addEventListener('click',()=>{
+    task.push(input.value)
+    console.log(task)
+    localStorage.setItem('task',JSON.stringify(task));
+    savetodo(input.value);
+    input.value='';
+})
+function savetodo(val){
+   let para= document.createElement('p');
+   para.innerText=val;
+   todoList.appendChild(para);
+   para.addEventListener('click',()=>{
+    para.style.textDecoration='line-through'
+    remove(val)
+   }) 
+   para.addEventListener('dblclick',()=>{
+   todoList.removeChild(para)
+    remove(val)
+   }) 
+}
+function remove(val){
+  let index= task.indexof(val)
+    if(index>-1)
+    task.splice(index,1);
+    localStorage.setItem('task',JSON.stringify(task));
+}
+   </script>
+</body>
+</html>
