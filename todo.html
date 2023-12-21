@@ -55,9 +55,10 @@ function savetodo(val){
    }) 
 }
 function remove(val){
-  let index= task.indexof(val)
-    if(index>-1)
-    task.splice(index,1);
+  let index= task.indexof(val);
+    if(index >-1){
+        task.splice(index,1);
+    }
     localStorage.setItem('task',JSON.stringify(task));
 }
    </script>
